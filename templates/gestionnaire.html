@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gérer les mots de passe - Gestionnaire de Mots de Passe</title>
+</head>
+<body>
+    <h1>Gérer les mots de passe</h1>
+    <!-- Formulaire pour ajouter un nouveau mot de passe -->
+    <form action="/add_password" method="post">
+        <label for="password">Nouveau mot de passe :</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Ajouter</button>
+    </form>
+    
+    <!-- Liste des mots de passe -->
+    <h2>Liste des mots de passe :</h2>
+    <ul>
+        <li>Mot de passe 1 <a href="#">Modifier</a> <a href="#">Supprimer</a></li>
+        <li>Mot de passe 2 <a href="#">Modifier</a> <a href="#">Supprimer</a></li>
+        <!-- Ajoutez dynamiquement les autres mots de passe ici -->
+    </ul>
+</body>
+</html>
