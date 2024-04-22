@@ -10,9 +10,13 @@ def index():
 def login():
     return render_template('login.html')
 
-@app.route('/gestionnaire')
-def gestionnaire():
-    return render_template('gestionnaire.html')
+@app.route('/creation')
+def creation():
+    return render_template('creation.html')
+
+@app.route('/gestion')
+def gestion():
+    return render_template('gestion.html')
 
 @app.route('/export')
 def export():
