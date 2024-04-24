@@ -8,8 +8,10 @@
 <body>
     <h1>Modifier le mot de passe</h1>
     <form action="/edit_password" method="post">
+        <label for="text">Site :</label>
+        <input type="text" id="text" name="text" required><br/><br/>
         <label for="password">Nouveau mot de passe :</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" required><br/><br/>
         <button type="submit">Modifier</button>
     </form>
      <!-- Liste des mots de passe -->
