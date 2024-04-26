@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier le mot de passe - Gestionnaire de Mots de Passe</title>
+</head>
+<body>
+    <h1>Modifier le mot de passe de {{nomcoffre}}</h1>
+    <form action="/gestion?nomcoffre={{ nomcoffre }}" method="post">
+        <input type="hidden" name="nomcoffre" value="{{nomcoffre}}">
+        <label for="site">Site :</label>
+        <input type="text" id="site" name="site" required><br/><br/>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required><br/><br/>
+        <button type="submit">Ajouter</button>
+    </form>
+     
+     <h2>Liste des mots de passe :</h2>
+    <ul>
+        {% for site in passwords %}
+            <li>{{ site }}
+                <form action="/modifier_mot_de_passe_html" method="post" style="display: inline;">
+                    <input type="hidden" name="nomcoffre" value="{{ nomcoffre }}">
+                    <input type="hidden" name="site" value="{{ site }}">
+                    <button type="submit">Modifier</button>
+                </form>
+                <form action="/supprimer_mot_de_passe" method="post" style="display: inline;">
+                    <input type="hidden" name="nomcoffre" value="{{ nomcoffre }}">
+                    <input type="hidden" name="site" value="{{ site }}">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <h1>Export</h1>
+    <form action="/export" method="post">
+        <input type="hidden" name="nomcoffre" value="{{nomcoffre}}">
+        <button type="submit">Exporter votre magnifique coffre fort</button>
+    </form>
+</body>
+</html>
