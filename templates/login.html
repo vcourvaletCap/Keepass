@@ -7,7 +7,9 @@
 </head>
 <body>
     <h1>Connexion</h1>
-    <form action="/gestion" method="post">
+    <form action="/login" method="post">
+        <label for="text">Nom du coffre fort :</label>
+        <input type="text" id="text" name="text" required>
         <label for="password">Mot de passe :</label>
         <input type="password" id="password" name="password" required>
         <button type="submit">Connexion</button>

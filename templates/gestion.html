@@ -6,20 +6,37 @@
     <title>Modifier le mot de passe - Gestionnaire de Mots de Passe</title>
 </head>
 <body>
-    <h1>Modifier le mot de passe</h1>
-    <form action="/edit_password" method="post">
-        <label for="text">Site :</label>
-        <input type="text" id="text" name="text" required><br/><br/>
-        <label for="password">Nouveau mot de passe :</label>
+    <h1>Modifier le mot de passe de {{nomcoffre}}</h1>
+    <form action="/gestion?nomcoffre={{ nomcoffre }}" method="post">
+        <input type="hidden" name="nomcoffre" value="{{nomcoffre}}">
+        <label for="site">Site :</label>
+        <input type="text" id="site" name="site" required><br/><br/>
+        <label for="password">Mot de passe :</label>
         <input type="password" id="password" name="password" required><br/><br/>
-        <button type="submit">Modifier</button>
+        <button type="submit">Ajouter</button>
     </form>
-     <!-- Liste des mots de passe -->
+     
      <h2>Liste des mots de passe :</h2>
-     <ul>
-         <li>Mot de passe 1 <a href="#">Modifier</a> <a href="#">Supprimer</a></li>
-         <li>Mot de passe 2 <a href="#">Modifier</a> <a href="#">Supprimer</a></li>
-         <!-- Ajoutez dynamiquement les autres mots de passe ici -->
-     </ul>
+    <ul>
+        {% for site in passwords %}
+            <li>{{ site }}
+                <form action="/modifier_mot_de_passe_html" method="post" style="display: inline;">
+                    <input type="hidden" name="nomcoffre" value="{{ nomcoffre }}">
+                    <input type="hidden" name="site" value="{{ site }}">
+                    <button type="submit">Modifier</button>
+                </form>
+                <form action="/supprimer_mot_de_passe" method="post" style="display: inline;">
+                    <input type="hidden" name="nomcoffre" value="{{ nomcoffre }}">
+                    <input type="hidden" name="site" value="{{ site }}">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <h1>Export</h1>
+    <form action="/export" method="post">
+        <input type="hidden" name="nomcoffre" value="{{nomcoffre}}">
+        <button type="submit">Exporter votre magnifique coffre fort</button>
+    </form>
 </body>
 </html>

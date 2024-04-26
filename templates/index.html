@@ -10,7 +10,11 @@
     <p>Que souhaitez-vous faire ?</p>
     <ul>
         <li><a href="/login">Ouvrir un coffre-fort existant</a></li>
-        <li><a href="/creation">Créer un nouveau coffre-fort</a></li>
+        <li><a href="/creation">Créer un nouveau coffre-fort</a></li><br/>
+        <form action="/import" method="post" style="display: inline;" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" />
+            <input type = "submit" value="Importer le coffre fort">
+        </form>
     </ul>
 </body>
 </html>
