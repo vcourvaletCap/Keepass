@@ -5,9 +5,8 @@ Projet Keepass pour la Cryptologie
 Ce projet a pour but d'être un gestionnaire de mot de passe
 
 # Architecture du projet
-Le dossier "classe" contient la classe du coffre-fort
-Le dossier "templates" contient les différents fichier HTML pour avoir la partie front-end
-Le fichier app.py qui se trouve à la racine du projet permet de lancer le programme
+Le dossier "templates" contient les différents fichier HTML pour avoir la partie front-end,
+le fichier app.py qui se trouve à la racine du projet permet de lancer le programme et le fichier "strongbox.py" contient la classe du coffre-fort avec toutes les fonctions relatives à celui-ci
 
 # Utilisation
 Pour pouvoir lancer le projet il faut lancer le app.py
